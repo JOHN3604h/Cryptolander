@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallet Actions</title>
+  <link rel="stylesheet" href="actions.css" />
+</head>
+<body>
+  <div class="wallet-panel fade-in">
+    <div class="tab-bar">
+      <button onclick="showTab('send')">Send</button>
+      <button onclick="showTab('receive')">Receive</button>
+      <button onclick="showTab('borrow')">Borrow</button>
+      <button onclick="showTab('history')">History</button>
+    </div>
+
+    <div id="send" class="tab-content">
+      <h3>Send Tokens</h3>
+      <input type="text" placeholder="Recipient address" id="sendAddress" />
+      <input type="number" placeholder="Amount (ETH)" id="sendAmount" />
+      <button onclick="sendTokens()">Send</button>
+    </div>
+
+    <div id="receive" class="tab-content hidden">
+      <h3>Your Wallet Address</h3>
+      <p id="receiveAddress">Loading...</p>
+    </div>
+
+    <div id="borrow" class="tab-content hidden">
+      <h3>Borrow Crypto</h3>
+      <input type="number" placeholder="Amount to borrow (DAI)" />
+      <input type="number" placeholder="Collateral in ETH" />
+      <button>Confirm Borrow</button>
+    </div>
+
+    <div id="history" class="tab-content hidden">
+      <h3>Transaction History</h3>
+      <p>(Coming soon – basic structure set)</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="actions.js"></script>
+</body>
+</html>
